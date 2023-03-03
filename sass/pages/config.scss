@@ -1,0 +1,59 @@
+.config-box {
+    width: 40%;
+    padding: 8px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #393939;
+    border-bottom: 2px solid #393939;
+    border-radius: 0;
+    background: #C0C0C0;
+
+    .content {
+        padding: 8px;
+
+        h3 {
+            font-size: 14px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .config-sounds {
+            div {
+                @include flexMixin();
+                gap: 10px;
+                justify-content: flex-start;
+                margin-top: 15px;
+                font-size: 14px;
+
+                button {
+                    @include flexMixin();
+                    padding: 5px;
+                    border-top: 2px solid white;
+                    border-left: 2px solid white;
+                    border-right: 2px solid #858585;
+                    border-bottom: 2px solid #858585;
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        background: #afacac;
+                    }
+                }
+
+                .On {
+                    border: 2px solid green;
+                }
+
+                .Off {
+                    border: 2px solid red;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .config-box {
+        width: 80%;
+    }
+}

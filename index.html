@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#008081" id="metaColor">
+    <title>Retro Music Player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="getTime()">
+    <main>
+        <div class="icons">
+            <div class="icon-btn" id="player-icon">
+                <img src="images/cd.png" alt="">
+                <p>Music Player</p>
+            </div>
+            <div class="icon-btn" id="wpp-icon">
+                <img src="images/mycomputer.png" alt="">
+                <p>Meu Computador</p>
+            </div>
+            <div class="icon-btn" id="config-icon">
+                <img src="images/config.png" alt="">
+                <p>Configurar</p>
+            </div>
+            <div class="icon-btn" id="sobre-icon">
+                <img src="images/credits.png" alt="">
+                <p>Sobre</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="start">
+            <img src="images/favicon-32x32.png" alt="">
+            <p>Start</p>
+        </div>
+        <div class="hours">
+            00:00
+        </div>
+    </footer>
+
+    <section class="modal">
+        <div class="player-box">
+            <div class="header">
+                <div class="logo">
+                    <img src="images/cd.png" alt="">
+                    <p>Music Player</p>
+                </div>
+                <div class="close" id="player-close"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="content">
+                <img src="videos/giphy01.gif" alt="">
+                <div class="load"><div class="spinner"></div></div>
+                <h1 class="title">Nome da musica</h1>
+                <p class="artist">Cantor</p>
+                <div class="duration">
+                    <div class="timer">
+                        <progress value="0" max="1"></progress>
+                        <div class="timer-mark"></div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <p class="seconds">0:00</p>
+                    <div id="btn-volume-up" class="btn">+</div>
+                    <div id="btn-voltar" class="btn"><i class="fas fa-step-backward setas voltar"></i></div>
+                    <div id="btn-play" class="btn"><i class="fas fa-play-circle botao-play"></i></div>
+                    <div id="btn-pause" class="btn"><i class="fas fa-pause-circle botao-pause"></i></div>
+                    <div id="btn-passar" class="btn"><i class="fas fa-step-forward setas passar"></i></div>
+                    <div id="btn-volume-down" class="btn">-</div>
+                    <p class="music-duration">0:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal-wallpapers">
+        <div class="wallpapers-box">
+            <div class="header">
+                <div class="logo">
+                    <img src="images/mycomputer.png" alt="">
+                    <p>Meu Computador</p>
+                </div>
+                <div class="close" id="wallpaper-close"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="modal-config">
+        <div class="config-box">
+            <div class="header">
+                <div class="logo">
+                    <img src="images/config.png" alt="">
+                    <p>Configurar</p>
+                </div>
+                <div class="close" id="config-close"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="content">
+                <h3>Configure os efeitos sonoros do site</h3>
+                <hr>
+                <div class="config-sounds">
+                    <div>
+                        <p>Som de Click:</p>
+                        <button class="config-btn-clickon clickOn">ON</button>
+                        <button class="config-btn-clickoff">OFF</button>
+                    </div>
+                    <div>
+                        <p>Som de Hover:</p>
+                        <button class="config-btn-hoveron clickOn">ON</button>
+                        <button class="config-btn-hoveroff">OFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="modal-sobre">
+        <div class="sobre-box">
+            <div class="header">
+                <div class="logo">
+                    <img src="images/credits.png" alt="">
+                    <p>Sobre</p>
+                </div>
+                <div class="close" id="sobre-close"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+    
+            <div class="content">
+                <h3>Sobre</h3>
+                <hr>
+                <p>Esse site foi feito para funcionar como um Music Player instalado em um sistema operacional antigo, semelhante ao Windows 95</p>
+                <p>Ele foi construido para possuir uma vibe Retro / Lofi em seu visual</p>
+                <p>Stacks usadas: Html, Sass e JavaScript</p>
+                <hr>
+                <p>Feito por <a href="https://ryancostaportfolio.netlify.app/" target="_blank">Ryan Costa &copy;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <div class="spinner"></div>
+    </section>
+
+    <audio id="song" src="#"></audio>
+    <audio id="hover" src="sounds/hover.mp3"></audio>
+    <audio id="click" src="sounds/click.mp3"></audio>
+
+    <script src="js/script.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/hours.js"></script>
+    <script src="js/wallpapers.js"></script>
+    <script src="js/config.js"></script>
+</body>
+</html>

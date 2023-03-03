@@ -1,0 +1,75 @@
+.wallpapers-box {
+    width: 70%;
+    padding: 5px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #393939;
+    border-bottom: 2px solid #393939;
+    border-radius: 0;
+    background: #C0C0C0;
+
+    .content {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        @include flexMixin();
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .wallpaper-img {
+            width: 200px;
+            height: 130px;
+            border: 2px solid #393939;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                filter: grayscale(100%);
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .wallpapers-box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 970px) {
+    .wallpapers-box {
+        width: 90%;
+
+        .content {
+            .wallpaper-img {
+                width: 160px;
+                height: 90px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 650px) {
+    .wallpapers-box {
+        width: 85%;
+        gap: 10px;
+        .content {
+            .wallpaper-img {
+                width: 120px;
+                height: 60px;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .wallpapers-box {
+        .content {
+            .wallpaper-img {
+                width: 110px;
+                height: 50px;
+            }
+        }
+    }
+}

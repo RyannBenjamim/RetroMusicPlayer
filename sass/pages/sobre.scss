@@ -1,0 +1,29 @@
+.sobre-box {
+    width: 50%;
+    padding: 5px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #393939;
+    border-bottom: 2px solid #393939;
+    border-radius: 0;
+    background: #C0C0C0;
+
+    .content {
+        text-align: center;
+        padding: 10px;
+
+        p {
+            margin-top: 20px;
+        }
+
+        hr {
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .sobre-box {
+        width: 80%;
+    }
+}

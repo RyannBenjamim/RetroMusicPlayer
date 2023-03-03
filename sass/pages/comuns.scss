@@ -1,0 +1,201 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'windows-95';
+    src: url(../../fonts/w-95-sans-serif.woff);
+}
+
+@mixin flexMixin() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-position: center;
+    background-size: cover;
+    font-family: 'windows-95', sans-serif;
+}
+
+main {
+    @include flexMixin();
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 95vh;
+    padding-top: 10px;
+
+    .icon-btn {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        margin-left: 3px;
+        @include flexMixin();
+        flex-direction: column;
+        cursor: pointer;
+
+        img {
+            width: 55px;
+        }
+
+        p {
+            font-size: 10px;
+            margin-left: 10px;
+            margin-top: 5px;
+            color: #fdfdfd
+        }
+    }
+}
+
+footer {
+    @include flexMixin();
+    justify-content: space-between;
+    height: 5vh;
+    border-top: 2px solid white;
+    border-radius: 0;
+    background: #C0C0C0;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    .start, .hours {
+        height: 3.5vh;
+        padding: 4px;
+        @include flexMixin();
+        border-top: 2px solid white;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        border-right: 2px solid #393939;
+        border-bottom: 2px solid #393939;
+        border-radius: 0;
+        background: #C0C0C0;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        img {
+            width: 20px;
+            margin-right: 6px;
+        }
+
+        p {
+            font-size: 12px
+        }
+
+        &:hover {
+            background: #a7a5a5;
+        }
+    }
+
+    .hours {
+        font-size: 10px
+    }
+}
+
+@mixin modalStyles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include flexMixin();
+    width: 100%;
+    height: 100vh; 
+}
+
+.modal {
+    @include modalStyles();
+    display: none;
+}
+
+.modal-wallpapers {
+    @include modalStyles();
+    display: none;
+}
+
+.modal-config {
+    @include modalStyles();
+    display: none;
+}
+
+.modal-sobre {
+    @include modalStyles();
+    display: none;
+}
+
+.wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #fff;
+    @include flexMixin();
+    transition: opacity 0.25s, visibility 1s;
+}
+.fade {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    border: 8px solid rgba(0, 0, 0, .1);
+    border-left-color: #22a6b3;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg);}
+}
+
+.header {
+    background-color: #000181;
+    width: 100%;
+    height: 30px;
+    @include flexMixin();
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 6px;
+
+    .logo {
+        @include flexMixin();
+        justify-content: flex-start;
+
+        img {
+            width: 22px;
+            margin-bottom: 3px;
+            margin-right: 8px;
+        }
+
+        p {
+            color: #fdfdfd;
+            font-size: 12px;
+        }
+    }
+
+    .close {
+        @include flexMixin();
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        border-right: 2px solid #393939;
+        border-bottom: 2px solid #393939;
+        border-radius: 0;
+        background: #C0C0C0;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            background: #a7a5a5;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .spinner {
+        width: 50px;
+        height: 50px;
+    }
+}
